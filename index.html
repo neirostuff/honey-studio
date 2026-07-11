@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студия МЁД | Троицк & Челябинск | Депиляция, Брейдинг, Тату</title>
+    <meta name="description" content="Премиальная студия красоты 'МЁД' (Honey Studio). Депиляция, брейдинг, реконструкция волос, художественная татуировка и профессиональное обучение. Челябинск и Троицк.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Фоновое Видео -->
+    <div class="global-video-bg">
+        <video id="bgVideo" src="images/bg-video.mp4" autoplay loop muted playsinline></video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <button id="soundToggleBtn" class="sound-toggle-btn" aria-label="Включить звук">
+        <svg id="icon-muted" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16zm13.517 4.134-1.416-1.416A8.978 8.978 0 0 0 21 12a8.982 8.982 0 0 0-2.672-6.38l1.416-1.416A10.972 10.972 0 0 1 23 12c0 3.037-1.232 5.789-3.222 7.78l-1.416-1.415a8.978 8.978 0 0 0 1.044-1.231zM15.39 15.61l-1.416-1.416A4.982 4.982 0 0 0 16 12a4.983 4.983 0 0 0-1.464-3.536l1.416-1.416A6.974 6.974 0 0 1 18 12a6.976 6.976 0 0 1-2.045 4.95l-.565.66z"/></svg>
+        <svg id="icon-unmuted" style="display: none;" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M5.889 16H2a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3.889l5.294-4.332a.5.5 0 0 1 .817.387v15.89a.5.5 0 0 1-.817.387L5.89 16z"/></svg>
+    </button>
+
+    <!-- Навигация -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-text">HONEY</span>
+                <span class="logo-feat">FEAT</span>
+                <span class="logo-text">МЁД</span>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link">О нас</a></li>
+                    <li><a href="#services" class="nav-link">Услуги</a></li>
+                    <li><a href="#portfolio" class="nav-link">Портфолио</a></li>
+                    <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                    <li><a href="#academy" class="nav-link">Обучение</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <a href="https://vk.me/i.rzhevskaya99" target="_blank" class="btn btn-primary">Записаться</a>
+            
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Секция -->
+    <section class="hero" id="home">
+        <div class="container hero-content reveal">
+            <h1 class="hero-title">Премиум-студия <br><span class="highlight">Honey</span></h1>
+            <p class="hero-subtitle">Твой стиль. Твоя гладкость. Твои правила.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">Выбрать услугу</a>
+                <a href="#portfolio" class="btn btn-outline">Смотреть работы</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас / Мастера -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Наши <span class="highlight">Мастера</span></h2>
+                <p>Профессионалы с опытом более 6 лет, создающие идеальный образ.</p>
+            </div>
+            
+            <div class="masters-grid">
+                <!-- Карточка Инессы -->
+                <a href="https://vk.com/i.rzhevskaya99" target="_blank" class="master-card reveal">
+                    <div class="master-img-wrapper">
+                        <img src="images/inessa.jpg" alt="Инесса Ржевская" class="master-img" id="img-inessa">
+                    </div>
+                    <div class="master-info">
+                        <h3>Инесса Ржевская</h3>
+                        <p class="master-role">Основатель, Мастер-универсал</p>
+                        <p class="master-desc">Сертифицированный технолог по депиляции и брейдер. Обучает с нуля до профи.</p>
+                    </div>
+                </a>
+
+                <!-- Карточка Владислава -->
+                <a href="https://vk.com/grimmtattoo" target="_blank" class="master-card reveal" style="transition-delay: 0.2s;">
+                    <div class="master-img-wrapper">
+                        <img src="images/vlad.jpg" alt="Владислав Гримм" class="master-img" id="img-vlad">
+                    </div>
+                    <div class="master-info">
+                        <h3>Владислав Гримм</h3>
+                        <p class="master-role">Тату-мастер (Челябинск & Троицк)</p>
+                        <p class="master-desc">Опыт более 4 лет. Ч/б тату, чикано, графика и перекрытие старых работ.</p>
+                    </div>
+                </a>
+                
+                <!-- Карточка Алёны -->
+                <a href="https://vk.ru/id355561542" target="_blank" class="master-card reveal" style="transition-delay: 0.4s;">
+                    <div class="master-img-wrapper">
+                        <img src="images/alena.jpg" alt="Алёна Паршина" class="master-img" id="img-alena">
+                    </div>
+                    <div class="master-info">
+                        <h3>Алёна Паршина</h3>
+                        <p class="master-role">Мастер реконструкции волос</p>
+                        <p class="master-desc">Идеально гладкие волосы: ботокс, кератин, холодное восстановление.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги и Прайс -->
+    <section class="services section-padding" id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Наши <span class="highlight">Услуги</span></h2>
+                <p>Выбери то, что нужно именно тебе.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Брейдинг -->
+                <div class="service-card reveal">
+                    <div class="service-icon">✨</div>
+                    <h3>Брейдинг & Прически</h3>
+                    <ul class="price-list">
+                        <li><span>Афролоконы</span> <span class="price">от 11 000 ₽</span></li>
+                        <li><span>Дредолоконы / Косы</span> <span class="price">от 7 000 ₽</span></li>
+                        <li><span>Брейды</span> <span class="price">от 2 000 ₽</span></li>
+                        <li><span>Афронаращивание</span> <span class="price">от 11 000 ₽</span></li>
+                    </ul>
+                    <a href="https://vk.com/i.rzhevskaya99" class="btn btn-outline" target="_blank">Записаться</a>
+                </div>
+
+                <!-- Депиляция -->
+                <div class="service-card reveal" style="transition-delay: 0.1s;">
+                    <div class="service-icon">🍯</div>
+                    <h3>Депиляция</h3>
+                    <ul class="price-list">
+                        <li><span>Женская</span> <span class="price">от 250 ₽</span></li>
+                        <li><span>Мужская</span> <span class="price">от 350 ₽</span></li>
+                    </ul>
+                    <a href="https://vk.com/i.rzhevskaya99" class="btn btn-outline" target="_blank">Записаться</a>
+                </div>
+
+                <!-- Реконструкция волос -->
+                <div class="service-card reveal" style="transition-delay: 0.2s;">
+                    <div class="service-icon">💆‍♀️</div>
+                    <h3>Реконструкция волос</h3>
+                    <ul class="price-list">
+                        <li><span>Ботокс</span> <span class="price">от 1 500 ₽</span></li>
+                        <li><span>Кератин</span> <span class="price">от 1 500 ₽</span></li>
+                        <li><span>Восстановление</span> <span class="price">от 1 500 ₽</span></li>
+                    </ul>
+                    <a href="https://vk.ru/id355561542" class="btn btn-outline" target="_blank">Записаться</a>
+                </div>
+
+                <!-- Татуировка -->
+                <div class="service-card reveal" style="transition-delay: 0.3s;">
+                    <div class="service-icon">🖋️</div>
+                    <h3>Татуировка</h3>
+                    <ul class="price-list">
+                        <li><span>Стандарт (10–15 см)</span> <span class="price">5 500 ₽</span></li>
+                        <li><span>Мини-тату</span> <span class="price">3 000 ₽</span></li>
+                        <li><span>Акция "1+1=3"</span> <span class="price">4 500 ₽</span></li>
+                        <li><span>Перекрытие</span> <span class="price">Индивидуально</span></li>
+                    </ul>
+                    <a href="https://vk.com/grimmtattoo" class="btn btn-outline" target="_blank">К мастеру</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Обучение -->
+    <section class="academy section-padding" id="academy">
+        <div class="container academy-container reveal">
+            <div class="academy-content">
+                <h2>Обучение <br><span class="highlight">с нуля до профи</span></h2>
+                <p>Освой востребованную профессию в beauty-индустрии под руководством дипломированного тренера-технолога Инессы Ржевской.</p>
+                <ul class="academy-list">
+                    <li>Восковая депиляция (с углубленной практикой) — от 15 000 ₽</li>
+                    <li>Брейдинг, афролоконы, афронаращивание — от 19 990 ₽</li>
+                </ul>
+                <a href="https://vk.me/i.rzhevskaya99" class="btn btn-primary" target="_blank">Узнать подробнее</a>
+            </div>
+            <div class="academy-image">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Обучение в студии">
+            </div>
+        </div>
+    </section>
+
+    <!-- Портфолио -->
+    <section class="portfolio section-padding" id="portfolio">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Наше <span class="highlight">Портфолио</span></h2>
+                <p>Результаты, которыми мы гордимся.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <img src="images/portfolio/photo_2026-07-11_22-58-36.jpg" alt="Портфолио" class="reveal">
+                <img src="images/portfolio/photo_2026-07-11_22-58-41.jpg" alt="Портфолио" class="reveal" style="transition-delay: 0.1s;">
+                <img src="images/portfolio/photo_2026-07-11_22-58-42.jpg" alt="Портфолио" class="reveal" style="transition-delay: 0.2s;">
+                <img src="images/portfolio/photo_2026-07-11_22-58-45.jpg" alt="Портфолио" class="reveal" style="transition-delay: 0.3s;">
+                <img src="images/portfolio/photo_2026-07-11_22-58-47.jpg" alt="Портфолио" class="reveal" style="transition-delay: 0.1s;">
+                <img src="images/portfolio/photo_2026-07-11_22-58-48.jpg" alt="Портфолио" class="reveal" style="transition-delay: 0.2s;">
+                <img src="images/portfolio/photo_2026-07-11_22-58-50.jpg" alt="Портфолио" class="reveal" style="transition-delay: 0.3s;">
+                <img src="images/portfolio/photo_2026-07-11_22-58-52.jpg" alt="Портфолио" class="reveal" style="transition-delay: 0.4s;">
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;" class="reveal">
+                <a href="https://vk.com/honey_studio" class="btn btn-outline" target="_blank">Больше работ в VK</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews section-padding" id="reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Отзывы <span class="highlight">Клиентов</span></h2>
+                <p>Что говорят о нас те, кто уже доверил нам свою красоту.</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card reveal">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Прекрасный мастер! Делала депиляцию, всё прошло быстро и почти безболезненно. Инесса — настоящий профи, очень уютная атмосфера в студии."</p>
+                    <h4 class="review-author">— Анна</h4>
+                </div>
+                
+                <div class="review-card reveal" style="transition-delay: 0.1s;">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Делала кератин у Алёны. Волосы просто шикарные, прямые и блестящие! Эффект держится уже несколько месяцев, я в восторге."</p>
+                    <h4 class="review-author">— Екатерина</h4>
+                </div>
+                
+                <div class="review-card reveal" style="transition-delay: 0.2s;">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Влад — крутой мастер! Бил у него тату в Челябинске. Отличная проработка деталей и стерильность на высшем уровне. Рекомендую!"</p>
+                    <h4 class="review-author">— Максим</h4>
+                </div>
+                
+                <div class="review-card reveal" style="transition-delay: 0.3s;">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Обучалась брейдингу у Инессы. Информация подается очень доступно, много практики. Теперь сама работаю мастером, спасибо за знания!"</p>
+                    <h4 class="review-author">— Ольга</h4>
+                </div>
+            </div>
+            
+            <div class="reviews-actions reveal">
+                <a href="https://vk.com/reviews-224825900" target="_blank" class="btn btn-vk">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.543-1.675-1.449.229-3.986 1.173-1.563 1.638-2.519 1.488-2.922-.152-.406-.609-.61-1.488-.61h-3.655c-.71 0-1.015.305-1.269 1.117-1.117 3.553-2.691 6.551-3.554 6.551-.406 0-.609-.305-.609-1.93V8.895c0-.813-.254-1.219-1.421-1.219h-3.25c-.711 0-1.016.305-1.016.711 0 .813.914 1.016 1.015 3.047v4.672c0 1.016-.203 1.219-.609 1.219-.965 0-3.3-3.606-4.672-7.821-.254-.761-.609-1.066-1.422-1.066h-3.554c-.812 0-1.015.356-1.015.762 0 .812 3.656 8.784 7.922 13.048 2.641 2.642 5.586 2.743 7.617 2.743z"/>
+                    </svg>
+                    Отзывы (Троицк)
+                </a>
+                <a href="https://vk.com/topic-215539133_49084392" target="_blank" class="btn btn-vk">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.543-1.675-1.449.229-3.986 1.173-1.563 1.638-2.519 1.488-2.922-.152-.406-.609-.61-1.488-.61h-3.655c-.71 0-1.015.305-1.269 1.117-1.117 3.553-2.691 6.551-3.554 6.551-.406 0-.609-.305-.609-1.93V8.895c0-.813-.254-1.219-1.421-1.219h-3.25c-.711 0-1.016.305-1.016.711 0 .813.914 1.016 1.015 3.047v4.672c0 1.016-.203 1.219-.609 1.219-.965 0-3.3-3.606-4.672-7.821-.254-.761-.609-1.066-1.422-1.066h-3.554c-.812 0-1.015.356-1.015.762 0 .812 3.656 8.784 7.922 13.048 2.641 2.642 5.586 2.743 7.617 2.743z"/>
+                    </svg>
+                    Отзывы (Челябинск)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Контакты -->
+    <footer class="footer section-padding" id="contacts">
+        <div class="container footer-grid reveal">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="logo-text">HONEY</span><span class="logo-dot">.</span>
+                </a>
+                <p>Твой стиль. Твоя гладкость. Твои правила.</p>
+            </div>
+            
+            <div class="footer-location">
+                <h3>Троицк</h3>
+                <p>ул. 30 лет ВЛКСМ, 40</p>
+                <a href="https://vk.com/honey_studio" target="_blank" class="social-link">Группа VK</a>
+            </div>
+            
+            <div class="footer-location">
+                <h3>Челябинск</h3>
+                <p>ул. Карла Либкнехта, 2 (Центр)</p>
+                <a href="https://vk.com/club240046751" target="_blank" class="social-link">Группа VK</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Студия красоты МЁД & Honey Studio. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
