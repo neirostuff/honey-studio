@@ -175,23 +175,145 @@
                     <a href="https://vk.com/grimmtattoo" class="btn btn-outline" target="_blank">К мастеру</a>
                 </div>
             </div>
+            
+            <!-- Кнопка вызова прайсов -->
+            <div class="services-action reveal" style="text-align: center; margin-top: 50px;">
+                <button id="openPraisBtn" class="btn btn-primary">Посмотреть полный прайс студии</button>
+            </div>
         </div>
     </section>
 
     <!-- Обучение -->
     <section class="academy section-padding" id="academy">
-        <div class="container academy-container reveal">
-            <div class="academy-content">
-                <h2>Обучение <br><span class="highlight">с нуля до профи</span></h2>
-                <p>Освой востребованную профессию в beauty-индустрии под руководством дипломированного тренера-технолога Инессы Ржевской.</p>
-                <ul class="academy-list">
-                    <li>Восковая депиляция (с углубленной практикой) — от 15 000 ₽</li>
-                    <li>Брейдинг, афролоконы, афронаращивание — от 19 990 ₽</li>
-                </ul>
-                <a href="https://vk.me/i.rzhevskaya99" class="btn btn-primary" target="_blank">Узнать подробнее</a>
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Профессиональное <span class="highlight">Обучение</span></h2>
+                <p>Освой новую прибыльную профессию под руководством опытных мастеров студии.</p>
             </div>
-            <div class="academy-image">
-                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Обучение в студии">
+
+            <!-- Переключатель табов -->
+            <div class="academy-tabs reveal">
+                <button class="tab-btn active" data-tab="beauty-academy">Депиляция & Брейдинг</button>
+                <button class="tab-btn" data-tab="tattoo-academy">Художественная Тату</button>
+            </div>
+
+            <!-- Контент табов -->
+            <div class="tab-content reveal">
+                <!-- Таб 1: Депиляция и Брейдинг -->
+                <div class="tab-pane active" id="beauty-academy">
+                    <div class="academy-intro">
+                        <div class="academy-text">
+                            <h3>Обучение у Инессы Ржевской</h3>
+                            <p>Дипломированный тренер-технолог с опытом более 6 лет. Индивидуальный подход, постановка руки и поддержка после окончания курсов.</p>
+                        </div>
+                    </div>
+                    <div class="courses-grid">
+                        <a href="course.html?id=depilyaciya1day" class="course-card-link">
+                            <div class="course-mini-card">
+                                <div class="course-mini-img">
+                                    <img src="images/obucheniebrendingdepilyaciya/depilyaciya/depilyaciya1day/JH5TfRwD3umbxog2VyRuHjvnWjMqlvXthFCm74_j1vwVjDO-zgqmAQkyG6687saTEHjRMypf58zVIe_18F5mJsZJ.jpg" alt="Депиляция 1 день">
+                                </div>
+                                <div class="course-mini-info">
+                                    <h4>Депиляция: Базовый 1 день</h4>
+                                    <span class="course-mini-price">от 15 000 ₽</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="course.html?id=depilyaciya2day" class="course-card-link">
+                            <div class="course-mini-card">
+                                <div class="course-mini-img">
+                                    <img src="images/obucheniebrendingdepilyaciya/depilyaciya/depilyaciya2day/CRHHC2HkqlRYmvYpsEcQmke3hf1CG-KfzLJehdb7s2SNp-QbqAl3Nk7qRu5ccl1M7yG4TeaZmpmxgOJPV75zA7YU.jpg" alt="Депиляция 2 дня">
+                                </div>
+                                <div class="course-mini-info">
+                                    <h4>Депиляция: Базовый 2 дня</h4>
+                                    <span class="course-mini-price">от 20 000 ₽</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="course.html?id=breiding" class="course-card-link">
+                            <div class="course-mini-card">
+                                <div class="course-mini-img">
+                                    <img src="images/obucheniebrendingdepilyaciya/breiding/Z2WhZ-iQzki25WyHlU-32QUF5RXU0pCnalRvTOl1XK3NbZSwu6IgEvT5TDrjqRHub3jx8pLIszjMHKARGnqMWsOc.jpg" alt="Брейдинг">
+                                </div>
+                                <div class="course-mini-info">
+                                    <h4>Обучение «Брейдинг»</h4>
+                                    <span class="course-mini-price">22 990 ₽</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="course.html?id=afrolocany" class="course-card-link">
+                            <div class="course-mini-card">
+                                <div class="course-mini-img">
+                                    <img src="images/obucheniebrendingdepilyaciya/afrolocany/VtpmD3y6KO-HwwFHgdv8mI50-Z-85gi0-xKP7hvrl2LpQFygPwejYGRtv9mReO9qFcnkQ67oe8gHVn4rrf7NMV0u.jpg" alt="Афролоконы">
+                                </div>
+                                <div class="course-mini-info">
+                                    <h4>Обучение «Афролоконы»</h4>
+                                    <span class="course-mini-price">19 990 ₽</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="course.html?id=afronarashivanie" class="course-card-link">
+                            <div class="course-mini-card">
+                                <div class="course-mini-img">
+                                    <img src="images/obucheniebrendingdepilyaciya/afronarashivanie/etOAWMvuC25eNoXHGEvF8And7oTxa29ObHRXv11D575n3RRy1oNCa0AOlvNx1iA8new7LsofO28jpSh1lkPjWit4.jpg" alt="Афронаращивание">
+                                </div>
+                                <div class="course-mini-info">
+                                    <h4>Обучение «Афронаращивание»</h4>
+                                    <span class="course-mini-price">19 990 ₽</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="course.html?id=masterclastrening" class="course-card-link">
+                            <div class="course-mini-card">
+                                <div class="course-mini-img">
+                                    <img src="images/obucheniebrendingdepilyaciya/masterclastrening/WZUBWOFUnQab_5bOXmwE9ur0r18XVzOoc9E3czqGRchLJyDS-O4PZxoVWBe4TPpYpwq0axhL5fLFyGHdt0ZFm6Yg.jpg" alt="Изготовление комплектов">
+                                </div>
+                                <div class="course-mini-info">
+                                    <h4>Изготовление комплектов</h4>
+                                    <span class="course-mini-price">20 990 ₽</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="course.html?id=3v1vibor" class="course-card-link">
+                            <div class="course-mini-card">
+                                <div class="course-mini-img">
+                                    <img src="images/obucheniebrendingdepilyaciya/3v1vibor/3v1vibor.png" alt="Обучение на выбор">
+                                </div>
+                                <div class="course-mini-info">
+                                    <h4>Обучение «на выбор» (3 в 1)</h4>
+                                    <span class="course-mini-price">от 14 990 ₽</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Таб 2: Художественная Тату -->
+                <div class="tab-pane" id="tattoo-academy">
+                    <div class="tattoo-course-block">
+                        <div class="tattoo-course-img">
+                            <img src="images/obuchenietatu/tattoo_course.jpg" alt="Обучение тату-мастерству">
+                        </div>
+                        <div class="tattoo-course-content">
+                            <h3>Курсы тату-мастера с нуля</h3>
+                            <p class="tattoo-course-price">15 000 – 150 000 ₽</p>
+                            <p class="tattoo-course-desc">Многие думают, что для старта в тату достаточно купить дешевый набор на маркетплейсе. Но без правильной базы ты рискуешь здоровьем клиента и своей репутацией.</p>
+                            <p class="tattoo-course-desc">Я открываю набор на индивидуальное обучение профессии тату-мастера. Моя цель — не просто показать, как держать машинку, а подготовить специалиста, который будет уверенно работать с первого дня.</p>
+                            
+                            <div class="tattoo-course-program">
+                                <h4>В программе:</h4>
+                                <ul>
+                                    <li>Теоретический блок: гигиена, оборудование, пигменты.</li>
+                                    <li>Отработка на искусственной коже (до идеала).</li>
+                                    <li>Работа с реальными моделями под моим присмотром.</li>
+                                    <li>Разбор портфолио и продвижение в соцсетях.</li>
+                                </ul>
+                            </div>
+                            
+                            <a href="https://vk.com/grimmtattoo" target="_blank" class="btn btn-primary" style="margin-top: 20px;">Записаться к Владиславу</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -320,7 +442,32 @@
         </div>
     </footer>
 
+    <!-- Модальное окно просмотра прайсов (Lightbox) -->
+    <div id="praisModal" class="modal">
+        <span class="modal-close" id="closePraisBtn">&times;</span>
+        <div class="modal-content">
+            <div class="modal-slides">
+                <div class="modal-slide active">
+                    <img src="images/prais/prais_1.jpg" alt="Прайс-лист 1">
+                </div>
+                <div class="modal-slide">
+                    <img src="images/prais/prais_2.jpg" alt="Прайс-лист 2">
+                </div>
+                <div class="modal-slide">
+                    <img src="images/prais/prais_3.jpg" alt="Прайс-лист 3">
+                </div>
+                <div class="modal-slide">
+                    <img src="images/prais/prais_4.png" alt="Прайс-лист 4">
+                </div>
+            </div>
+            <button class="modal-prev" id="prevPraisBtn">&#10094;</button>
+            <button class="modal-next" id="nextPraisBtn">&#10095;</button>
+            <div class="modal-counter"><span id="currentSlideNum">1</span> / 4</div>
+        </div>
+    </div>
+
     <!-- JS -->
+    <script src="courses-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

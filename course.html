@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы Обучения | Студия красоты МЁД</title>
+    <meta name="description" content="Индивидуальные курсы обучения брейдингу, депиляции и афроприческам в студии красоты МЁД.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для страницы курса */
+        .course-page {
+            padding-top: 140px;
+            min-height: 100vh;
+            background-color: var(--bg-primary);
+        }
+
+        .breadcrumb {
+            display: flex;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .breadcrumb a {
+            transition: var(--tr-fast);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-gold);
+        }
+
+        .breadcrumb li:not(:last-child)::after {
+            content: '/';
+            margin-left: 10px;
+            color: rgba(0,0,0,0.15);
+        }
+
+        .course-container {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            margin-bottom: 80px;
+        }
+
+        .course-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .course-media {
+            flex: 1.1;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--tr-smooth);
+        }
+
+        .course-media:hover img {
+            transform: scale(1.03);
+        }
+
+        .course-details {
+            flex: 1.2;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .course-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.2;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .meta-val {
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+        }
+
+        .course-body {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .course-body p {
+            margin-bottom: 15px;
+        }
+
+        .program-section h3 {
+            font-family: var(--font-main);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .program-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .program-list li {
+            position: relative;
+            padding-left: 30px;
+            color: var(--text-secondary);
+        }
+
+        .program-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .course-action {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 992px) {
+            .course-wrapper {
+                flex-direction: column;
+            }
+            .course-media {
+                min-height: 350px;
+            }
+            .course-details {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Фоновое Видео (упрощенное или размытое) -->
+    <div class="global-video-bg">
+        <video id="bgVideo" src="images/bg-video.mp4" autoplay loop muted playsinline></video>
+        <div class="video-overlay" style="background: rgba(253, 251, 247, 0.65);"></div>
+    </div>
+
+    <!-- Навигация -->
+    <header class="header scrolled">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">HONEY</span>
+                <span class="logo-feat">FEAT</span>
+                <span class="logo-text">МЁД</span>
+            </a>
+            
+            <a href="index.html#academy" class="btn btn-outline">Все обучения</a>
+        </div>
+    </header>
+
+    <!-- Основной блок курса -->
+    <main class="course-page">
+        <div class="container">
+            <!-- Хлебные крошки -->
+            <ul class="breadcrumb">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="index.html#academy">Обучение</a></li>
+                <li id="breadcrumb-current">Загрузка курса...</li>
+            </ul>
+
+            <div class="course-container">
+                <div class="course-wrapper">
+                    <!-- Медиа (Фото) -->
+                    <div class="course-media">
+                        <img id="course-img" src="" alt="Изображение курса">
+                    </div>
+                    
+                    <!-- Детали курса -->
+                    <div class="course-details">
+                        <h1 id="course-title" class="course-title">Название курса</h1>
+                        
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <span class="meta-label">Стоимость</span>
+                                <span id="course-price" class="meta-val">—</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-label">Длительность</span>
+                                <span id="course-duration" class="meta-val">—</span>
+                            </div>
+                        </div>
+
+                        <div id="course-description" class="course-body">
+                            <!-- Описание курса динамически -->
+                        </div>
+
+                        <div class="program-section">
+                            <h3>Программа обучения:</h3>
+                            <ul id="course-program" class="program-list">
+                                <!-- Пункты программы динамически -->
+                            </ul>
+                        </div>
+
+                        <div class="course-action">
+                            <a id="course-enroll-btn" href="https://vk.me/i.rzhevskaya99" target="_blank" class="btn btn-primary">Записаться на курс</a>
+                            <a href="index.html#academy" class="btn btn-outline">Назад к обучению</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <p>&copy; 2026 Студия красоты МЁД & Honey Studio. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="courses-data.js"></script>
+    <script src="course.js"></script>
+</body>
+</html>

@@ -70,4 +70,86 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 4. Academy Tabs Logic
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetTab = btn.getAttribute('data-tab');
+
+            tabButtons.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+
+            btn.classList.add('active');
+            const activePane = document.getElementById(targetTab);
+            if (activePane) {
+                activePane.classList.add('active');
+            }
+        });
+    });
+
+    // 5. Pricelist Modal & Slider Logic
+    const praisModal = document.getElementById('praisModal');
+    const openPraisBtn = document.getElementById('openPraisBtn');
+    const closePraisBtn = document.getElementById('closePraisBtn');
+    const prevPraisBtn = document.getElementById('prevPraisBtn');
+    const nextPraisBtn = document.getElementById('nextPraisBtn');
+    const currentSlideNum = document.getElementById('currentSlideNum');
+    const modalSlides = document.querySelectorAll('.modal-slide');
+
+    if (praisModal && openPraisBtn) {
+        let currentSlideIdx = 0;
+
+        const showSlide = (idx) => {
+            modalSlides.forEach(slide => slide.classList.remove('active'));
+            if (modalSlides[idx]) {
+                modalSlides[idx].classList.add('active');
+            }
+            currentSlideNum.textContent = idx + 1;
+        };
+
+        openPraisBtn.addEventListener('click', () => {
+            praisModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Запретить прокрутку страницы под модалкой
+            currentSlideIdx = 0;
+            showSlide(currentSlideIdx);
+        });
+
+        const closeModal = () => {
+            praisModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        closePraisBtn.addEventListener('click', closeModal);
+
+        praisModal.addEventListener('click', (e) => {
+            if (e.target === praisModal) {
+                closeModal();
+            }
+        });
+
+        // Клавиатура (Esc, Стрелки)
+        document.addEventListener('keydown', (e) => {
+            if (praisModal.classList.contains('active')) {
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            }
+        });
+
+        const nextSlide = () => {
+            currentSlideIdx = (currentSlideIdx + 1) % modalSlides.length;
+            showSlide(currentSlideIdx);
+        };
+
+        const prevSlide = () => {
+            currentSlideIdx = (currentSlideIdx - 1 + modalSlides.length) % modalSlides.length;
+            showSlide(currentSlideIdx);
+        };
+
+        nextPraisBtn.addEventListener('click', nextSlide);
+        prevPraisBtn.addEventListener('click', prevSlide);
+    }
 });

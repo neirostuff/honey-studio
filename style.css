@@ -731,3 +731,363 @@ h2 {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================
+   MODAL LIGHTBOX FOR PRICELIST
+========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 18, 16, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity var(--tr-fast);
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: var(--tr-fast);
+    z-index: 2100;
+}
+
+.modal-close:hover {
+    color: var(--accent-gold);
+    transform: scale(1.1);
+}
+
+.modal-content {
+    position: relative;
+    max-width: 85%;
+    max-height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-slides {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-slide {
+    display: none;
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+.modal-slide.active {
+    display: block;
+    animation: fadeIn var(--tr-fast) forwards;
+}
+
+.modal-slide img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-prev, .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 16px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: var(--tr-fast);
+    z-index: 2050;
+    user-select: none;
+}
+
+.modal-prev:hover, .modal-next:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.modal-prev { left: -80px; }
+.modal-next { right: -80px; }
+
+.modal-counter {
+    position: absolute;
+    bottom: -40px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 1024px) {
+    .modal-prev { left: 20px; }
+    .modal-next { right: 20px; }
+    .modal-prev, .modal-next {
+        background: rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* =========================================
+   ACADEMY NEW TABS & CARDS
+========================================= */
+.academy-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.tab-btn {
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--text-secondary);
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--tr-fast);
+    font-family: var(--font-main);
+}
+
+.tab-btn:hover {
+    border-color: rgba(217, 154, 41, 0.3);
+    color: var(--text-primary);
+}
+
+.tab-btn.active {
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 20px rgba(217, 154, 41, 0.2);
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: tabFadeIn 0.5s ease forwards;
+}
+
+@keyframes tabFadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.academy-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.academy-intro h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.academy-intro p {
+    color: var(--text-secondary);
+}
+
+/* Сетка мини-карточек */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.course-card-link {
+    display: block;
+}
+
+.course-mini-card {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
+    height: 100%;
+    transition: var(--tr-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.course-mini-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(217, 154, 41, 0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.course-mini-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.course-mini-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--tr-smooth);
+}
+
+.course-mini-card:hover .course-mini-img img {
+    transform: scale(1.05);
+}
+
+.course-mini-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.course-mini-info h4 {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.course-mini-price {
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-size: 1.05rem;
+}
+
+/* Блок курса тату */
+.tattoo-course-block {
+    display: flex;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: var(--tr-smooth);
+}
+
+.tattoo-course-img {
+    flex: 1.1;
+    min-height: 450px;
+}
+
+.tattoo-course-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tattoo-course-content {
+    flex: 1.2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tattoo-course-content h3 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.tattoo-course-price {
+    font-size: 1.4rem;
+    color: var(--accent-gold);
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.tattoo-course-desc {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-size: 1rem;
+}
+
+.tattoo-course-program {
+    margin: 25px 0;
+}
+
+.tattoo-course-program h4 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.tattoo-course-program ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tattoo-course-program li {
+    position: relative;
+    padding-left: 24px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.tattoo-course-program li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-gold);
+    font-weight: bold;
+}
+
+@media (max-width: 992px) {
+    .tattoo-course-block {
+        flex-direction: column;
+    }
+    .tattoo-course-img {
+        min-height: 300px;
+    }
+    .tattoo-course-content {
+        padding: 30px;
+    }
+    .tattoo-course-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .academy-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
