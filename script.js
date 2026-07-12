@@ -89,5 +89,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 5. Portfolio Lightbox Logic
+    const portfolioModal = document.getElementById('portfolioModal');
+    const portfolioModalImg = document.getElementById('portfolioModalImg');
+    const closePortfolioBtn = document.getElementById('closePortfolioBtn');
+    const portfolioImages = document.querySelectorAll('.portfolio-grid img');
+
+    if (portfolioModal && portfolioModalImg) {
+        portfolioImages.forEach(img => {
+            img.addEventListener('click', () => {
+                portfolioModalImg.src = img.src;
+                portfolioModalImg.alt = img.alt || 'Портфолио';
+                portfolioModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Запретить скролл
+            });
+        });
+
+        const closeLightbox = () => {
+            portfolioModal.classList.remove('active');
+            document.body.style.overflow = '';
+        };
+
+        if (closePortfolioBtn) {
+            closePortfolioBtn.addEventListener('click', closeLightbox);
+        }
+
+        portfolioModal.addEventListener('click', (e) => {
+            if (e.target === portfolioModal) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (portfolioModal.classList.contains('active') && e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    }
 });
 

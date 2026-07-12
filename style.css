@@ -1080,3 +1080,72 @@ h2 {
         text-align: center;
     }
 }
+
+/* =========================================
+   PORTFOLIO LIGHTBOX MODAL
+========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 18, 16, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity var(--tr-fast);
+}
+
+.modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: var(--tr-fast);
+    z-index: 2100;
+}
+
+.modal-close:hover {
+    color: var(--accent-gold);
+    transform: scale(1.1);
+}
+
+.modal-content {
+    position: relative;
+    max-width: 85%;
+    max-height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease forwards;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.portfolio-grid img {
+    cursor: pointer;
+}
