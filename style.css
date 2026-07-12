@@ -476,8 +476,14 @@ h2 {
 ========================================= */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+}
+
+@media (min-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .service-card {
@@ -733,125 +739,108 @@ h2 {
 }
 
 /* =========================================
-   MODAL LIGHTBOX FOR PRICELIST
+   DEPILATION WIDE CARD & FULL PRICELIST
 ========================================= */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    left: 0;
+.service-card-wide {
+    background-color: var(--bg-secondary);
+    padding: 50px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: var(--tr-smooth);
     width: 100%;
-    height: 100%;
-    background-color: rgba(20, 18, 16, 0.95);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity var(--tr-fast);
 }
 
-.modal.active {
+.service-card-wide:hover {
+    border-color: rgba(217, 154, 41, 0.3);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.service-card-wide-header h3 {
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+.depilation-tables-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.depilation-table-col h4 {
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-gold);
+    letter-spacing: 0.5px;
+}
+
+/* Оформление комплексов */
+.price-list-complex li {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.complex-details {
     display: flex;
-    opacity: 1;
+    flex-direction: column;
+    gap: 2px;
 }
 
-.modal-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: #ffffff;
-    font-size: 40px;
-    font-weight: 300;
-    cursor: pointer;
-    transition: var(--tr-fast);
-    z-index: 2100;
+.complex-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
 }
 
-.modal-close:hover {
+.complex-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.complex-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.new-price {
     color: var(--accent-gold);
-    transform: scale(1.1);
+    font-weight: 700;
+    font-size: 1.05rem;
 }
 
-.modal-content {
-    position: relative;
-    max-width: 85%;
-    max-height: 85%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Адаптивность для прайсов */
+@media (max-width: 1200px) {
+    .depilation-tables-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
 }
 
-.modal-slides {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-slide {
-    display: none;
-    max-width: 100%;
-    max-height: 80vh;
-}
-
-.modal-slide.active {
-    display: block;
-    animation: fadeIn var(--tr-fast) forwards;
-}
-
-.modal-slide img {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.modal-prev, .modal-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: white;
-    padding: 16px 20px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: var(--tr-fast);
-    z-index: 2050;
-    user-select: none;
-}
-
-.modal-prev:hover, .modal-next:hover {
-    background-color: var(--accent-gold);
-    border-color: var(--accent-gold);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.modal-prev { left: -80px; }
-.modal-next { right: -80px; }
-
-.modal-counter {
-    position: absolute;
-    bottom: -40px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 1024px) {
-    .modal-prev { left: 20px; }
-    .modal-next { right: 20px; }
-    .modal-prev, .modal-next {
-        background: rgba(0, 0, 0, 0.6);
+@media (max-width: 768px) {
+    .service-card-wide {
+        padding: 30px 20px;
+    }
+    .depilation-tables-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
